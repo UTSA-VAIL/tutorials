@@ -85,7 +85,7 @@ def train_main(dataset : str, is_gpu, data_path):
     if dataset == 'imagenet':
         if not is_gpu:
             model = models.vgg19(pretrained=False)
-            optimizer = torch.optim.SGD(model.parameters(), lr = 1e3)
+            optimizer = torch.optim.SGD(model.parameters(), lr = 1e-3)
             cce = nn.CrossEntropyLoss()
             normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                      std=[0.229, 0.224, 0.225])
